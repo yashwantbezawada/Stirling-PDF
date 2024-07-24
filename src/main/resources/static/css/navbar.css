@@ -128,6 +128,30 @@ span.icon-text::after {
   color: var(--md-sys-color-on-surface-variant);
 }
 
+/* Add this to your CSS file */
+.navbar-gradient {
+    background: linear-gradient(to right, #ff4d4d, #ffffff);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-menu .menu-title,
+.navbar .dropdown-item {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.navbar .dropdown-menu .menu-title {
+    font-size: 1rem;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .nav-link:hover {
+    color: #ff4d4d !important;
+}
+
+
+
 .dropdown-menu.scrollable-y {
   overflow-y: scroll;
   height: 360px;

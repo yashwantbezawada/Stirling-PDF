@@ -2,12 +2,11 @@
   <script th:src="@{'/js/languageSelection.js'}"></script>
   <script th:inline="javascript">
     const currentVersion = /*[[${@appVersion}]]*/ '';
-    const noFavourites = /*[[#{noFavourites}]]*/ '';
     const updateAvailable =  /*[[#{settings.updateAvailable}]]*/ '';
   </script>
   <script th:src="@{'/js/githubVersion.js'}"></script>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container ">
+  <nav class="navbar navbar-expand-lg navbar-gradient">
+    <div class="container">
       <a class="navbar-brand" th:href="@{'/'}" style="display: flex;">
         <img class="main-icon" th:src="@{'/favicon.svg'}" alt="icon">
         <span class="icon-text" th:text="${@navBarText}"></span>
@@ -282,31 +281,9 @@
             </a>
           </li>
 
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#" th:href="@{'/merge-pdfs'}"
-              th:classappend="${currentPage}=='merge-pdfs' ? 'active' : ''" th:title="#{home.merge.desc}">
-              <span class="material-symbols-rounded">
-                add_to_photos
-              </span>
-              <span class="icon-text" th:data-text="#{home.merge.title}" th:text="#{home.merge.title}"></span>
-            </a>
-          </li> -->
-
         </ul>
         <ul class="navbar-nav  flex-nowrap">
           <li class="nav-item dropdown">
-            <a class="nav-link" id="navbarDropdown-5" href="#" role="button" data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <span class="material-symbols-rounded">
-                star
-              </span>
-              <span class="icon-text icon-hide" th:data-text="#{navbar.favorite}" th:text="#{navbar.favorite}"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-tp dropdown-mw-28" aria-labelledby="navbarDropdown-5">
-              <div class="dropdown-menu-wrapper px-xl-2 px-2" id="favoritesDropdown" >
-              <!-- Dropdown items will be added here by JavaScript -->
-            </div>
-          </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="dark-mode-toggle" href="#">
@@ -332,7 +309,7 @@
               </div>
             </div>
           </li>
-          
+
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="material-symbols-rounded">
@@ -350,20 +327,9 @@
               </div>
             </div>
           </li>
-
-          <li class="nav-item">
-            <!-- Settings Button -->
-            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#settingsModal">
-              <span class="material-symbols-rounded">
-                settings
-              </span>
-              <span class="icon-text icon-hide" th:data-text="#{navbar.settings}" th:text="#{navbar.settings}"></span>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
-    <script th:src="@{'/js/favourites.js'}"></script>
     <script th:src="@{'/js/search.js'}"></script>
   </nav>
 
@@ -381,32 +347,6 @@
           </button>
         </div>
         <div class="modal-body">
-          <p class="mb-0" th:utext="#{settings.appVersion} + ' ' + ${@appVersion}"></p>
-          <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
-            <div class="footer-center" style="flex-direction: row;">
-              <a href="https://github.com/Stirling-Tools/Stirling-PDF" class="mx-1" role="button"
-                th:title="#{visitGithub}">
-                <img th:src="@{'/images/github.svg'}" alt="github">
-              </a>
-              <a href="https://hub.docker.com/r/frooodle/s-pdf" class="mx-1" role="button" th:title="#{seeDockerHub}">
-                <img th:src="@{'/images/docker.svg'}" alt="docker">
-              </a>
-              <a href="https://discord.gg/Cn8pWhQRxZ" class="mx-1" role="button" th:title="#{joinDiscord}">
-                <img th:src="@{'/images/discord.svg'}" alt="discord">
-              </a>
-              <a href="https://github.com/sponsors/Frooodle" class="mx-1" role="button" th:title="#{donate}">
-                <span class="material-symbols-rounded fill footer-icon" style="font-size: 2.5rem;">
-                  favorite
-                </span>
-              </a>
-            </div>
-
-            <a th:href="@{'/swagger-ui/index.html'}" class="btn btn-sm btn-outline-primary mx-1" role="button"
-              target="_blank">API</a>
-            <a href="https://github.com/Stirling-Tools/Stirling-PDF/releases"
-              class="btn btn-sm btn-outline-primary mx-1" id="update-btn" th:utext="#{settings.update}" role="button"
-              target="_blank"></a>
-          </div>
 
           <div class="mb-3">
             <label for="downloadOption" th:utext="#{settings.downloadOption.title}"></label>

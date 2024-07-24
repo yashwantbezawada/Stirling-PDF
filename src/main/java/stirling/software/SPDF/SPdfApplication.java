@@ -69,7 +69,7 @@ public class SPdfApplication {
         app.addInitializers(new ConfigInitializer());
         Map<String, String> propertyFiles = new HashMap<>();
 
-        // stirling pdf settings file
+        // PDF Editor settings file
         if (Files.exists(Paths.get("configs/settings.yml"))) {
             propertyFiles.put("spring.config.additional-location", "file:configs/settings.yml");
         } else {
